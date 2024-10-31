@@ -13,6 +13,25 @@ namespace Ejercicio_32
         {
             decimal valorMatricula;
             int creditosExtras = estudiante.Creditos > 20 ? estudiante.Creditos - 20 : 0;
+
+            //Valor de los creditos
+            valorMatricula = (estudiante.Creditos - creditosExtras) * ValorCreditoNormal +
+                             (creditosExtras * ValorCreditoNormal * 2);
+
+            switch (estudiante.Estrato)
+            {
+                case 1:
+                    valorMatricula *= 0.2m;
+                    break;
+                case 2:
+                    valorMatricula *= 0.5m;
+                    break;
+                case 3:
+                    valorMatricula *= 0.7m;
+                    break;
+            }
+            return valorMatricula;
+
         }
     }
 }
