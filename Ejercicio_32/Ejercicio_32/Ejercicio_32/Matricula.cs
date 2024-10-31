@@ -33,5 +33,22 @@ namespace Ejercicio_32
             return valorMatricula;
 
         }
+        public static decimal CalcularSubsidio(Estudiante estudiante)
+        {
+            decimal subsidio = 0;
+
+            switch (estudiante.Estrato)
+            {
+                case 1:
+                    subsidio = 200000;
+                    break;
+                case 2:
+                    subsidio = 100000;
+                    break;
+            }
+
+            return subsidio;
+        }
+
     }
 }
